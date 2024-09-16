@@ -1,76 +1,66 @@
-/* Reset some default styles */
-body, h1, h2, h3, p {
-    margin: 0;
-    padding: 0;
+.loader {
+  color: rgb(124, 124, 124);
+  box-sizing: content-box;
+  height: 40px; /* Adjust based on the visible height */
+  padding: 10px 10px;
+  display: flex;
+  align-items: end; /* Center items vertically */
+  border-radius: 8px;
+  overflow: hidden; /* Hide overflow for clean animation */
 }
-
-/* Basic styling */
-body {
-    font-family: Arial, sans-serif;
-    line-height: 1.6;
-    color: #333;
-    background-color: #f4f4f4;
-}
-
 header {
-    background: #333;
-    color: #fff;
-    padding: 1rem 0;
-    text-align: center;
+  position: fixed; /* Fixed positioning for the navbar */
+
+  z-index: 100; /* Higher z-index to ensure it is above the loader */
+}
+.words {
+  overflow: hidden;
+  position: relative;
+  height: 100%; /* Ensure the container height matches .loader height */
 }
 
-nav ul {
-    list-style: none;
-    padding: 0;
-    display: flex;
-    justify-content: center;
-    margin-bottom: 1rem;
+.word {
+  display: block;
+  align-items: end;
+  height: 40px; /* Each word's height */
+  line-height: 40px; /* Center text vertically */
+  padding-left: 6px;
+  color: #956afa;
+  animation: scrollWords 9s infinite; /* Adjust duration and steps */
 }
 
-nav ul li {
-    margin: 0 1rem;
-}
-
-nav ul li a {
-    color: #fff;
-    text-decoration: none;
-    font-weight: bold;
-}
-
-h1 {
-    margin: 0;
-}
-
-section {
-    padding: 2rem;
-    max-width: 800px;
-    margin: auto;
-}
-
-h2 {
-    border-bottom: 2px solid #333;
-    padding-bottom: 0.5rem;
-    margin-bottom: 1rem;
-}
-
-.project {
-    background: #fff;
-    border: 1px solid #ddd;
-    margin-bottom: 1rem;
-    padding: 1rem;
-}
-
-ul {
-    list-style: disc;
-    padding-left: 1.5rem;
-}
-
-footer {
-    background: #333;
-    color: #fff;
-    text-align: center;
-    padding: 1rem 0;
-    position: absolute;
-    bottom: 0;
-    width: 100%;
+@keyframes scrollWords {
+  0% {
+    transform: translateY(0);
+  }
+  10% {
+    transform: translateY(-100%);
+  }
+  20% {
+    transform: translateY(-200%);
+  }
+  30% {
+    transform: translateY(-300%);
+  }
+  40% {
+    transform: translateY(-400%);
+  }
+  50% {
+    transform: translateY(-500%);
+  }
+  60% {
+    transform: translateY(-600%);
+  }
+  70% {
+    transform: translateY(-700%);
+  }
+  80% {
+    transform: translateY(-800%);
+  }
+  90% {
+    transform: translateY(-900%);
+  }
+  100% {
+    transform: translateY(0%);
+  }
 }
